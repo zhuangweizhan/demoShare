@@ -1,0 +1,73 @@
+
+<view class="{{isInvalid ? 'hide': ''}}">
+  <view class="{{isSelectShowCoupon ? 'pageBox' : ''}}">
+    <view class="pages_con" style="{{operateType == 2 ? 'padding-bottom:120rpx':''}}">
+      <swiper class="swiper" autoplay="true" interval="5000" duration="1000" indicator-color='rgba(255,255,255,0.5)'>
+        <block wx:for="{{productPicture}}" wx:for-index="i" wx:key="url">
+          <swiper-item>
+            <view class='swiperBox'>
+              <image src="{{item.pictureUrl}}" class="slide-image" mode="scaleToFill" binderror="binderrorImg" data-i="{{i}}" />
+              <view class='swiperNum'>{{i+1}}/{{productPicture.length}}</view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+
+      <view class="proDescribe">
+        <view class="proPrice">
+          <text class="present_price">¥<text style='font-size:44rpx'>{{pageUtils.pShowPrice(currentPrice,true)}}</text>
+          <text class="original_price  {{currentPrice == retailPrice ? 'hide' : ''}}">{{pageUtils.pShowPrice(retailPrice)}} <text class='spe_icon'>特价</text></text>
+          </text>
+        </view>
+        <view class="proName">{{productName}}</view>
+        <view class="proNature">{{sellDesc}}</view>
+        <view class="shareBox" wx:if='{{appMode != 1}}'>
+          <button bindtap='shareBtn'></button>
+          <image src="../../images/ico_share.png" class="ico_share"></image>
+          <text>分享</text>
+        </view>
+      </view>
+
+      <view class="attrBox {{productSkuList.length == '1'?'hide':''}}" >
+      <view class="attrHead" >规格</view>
+      <view class='attrItem'>
+      <block  wx:for-index='i' wx:for="{{productSkuList}}" wx:key="index" >
+          <block wx:if="{{item.inventory == 0}}">
+              <view class="attrOne noActive" >{{item.productModelName}}</view>
+          </block>
+          <block wx:if="{{item.inventory != 0}}" >
+              <view class="attrOne {{item.select ? 'active' : '' }}" bindtap='changeSkuId' data-i='{{i}}' >{{item.productModelName}}</view>
+          </block>
+      </block>
+      </view>
+    </view> 
+
+      <view class="fullCutBox">
+
+        <view class="b_box {{specialTip == '' ? 'hide':''}}">
+          <view class="b_left_sec">特价</view>
+          <view class="b_right_sec">{{specialTip}}</view>
+        </view>
+        <view class="b_box {{retailPrice == currentPrice ? 'hide':''}}">
+          <view class="b_left_sec">优惠</view>
+          <view class="b_right_sec">已省 {{pageUtils.pShowPrice(retailPrice - currentPrice)}}</view>
+        </view>
+      </view>
+
+      <view class="pro_select_box">
+        商品详情
+      </view>
+
+      <view class="parameters_box">
+        <block wx:for="{{productParameters}}" wx:for-index="index">
+          <view class="b_one">
+            <view class="o_left">{{item.propertyName}}：</view>
+            <view class="o_right">{{item.propertyValue}}</view>
+          </view>
+        </block>
+      </view>
+      <template is="wxParse" data="{{wxParseData:description.nodes}}" />
+    </view>
+    
+  </view>
+</view>
