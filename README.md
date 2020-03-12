@@ -14,6 +14,14 @@
 
 该项目为达到真实服务端交互案例。提供koa模拟数据服务端。需同时启动服务端（koa） + 客户端（vue），才可体验项目。
 
+#### demo截图
+
+ ![Image text](https://github.com/zhuangweizhan/demoShare/blob/master/my_first.png) 
+
+ ![Image text](https://github.com/zhuangweizhan/demoShare/blob/master/my_cart.png) 
+
+![Image text](https://github.com/zhuangweizhan/demoShare/blob/master/my_center.png)
+
 ## api简介
 
 以下api可通过官网：https://cn.vuejs.org/v2/api查询，下边是简单说明以及具体应用场景案例说明。
