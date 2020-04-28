@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "飞课科技",
+  "usingComponents": {
+    "skeleton": "/component/skeleton/skeleton"
+  }
+}

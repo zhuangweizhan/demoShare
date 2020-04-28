@@ -1,0 +1,19 @@
+<skeleton selector="skeleton" loading="spin" bgcolor="#FFF" unit="px" wx:if="{{showSkeleton}}"></skeleton>
+
+<view class="skeleton">
+
+  <view class="u">
+    <block>
+      <image class="u-avatar skeleton-radius" src="{{userInfo.avatarUrl}}"></image>
+      <view class="u-nickname skeleton-rect" data-s-height="25">{{userInfo.nickName}}</view>
+      <view class="u-nickname skeleton-rect" data-s-height="25">{{userInfo.link}}</view>
+    </block>
+  </view>
+
+   <view >
+    <view wx:for="{{lists}}" wx:key="{{index}}" class="lists">
+      <view class="skeleton-rect" data-s-height="20">{{item}}</view>
+    </view>
+  </view>
+
+</view>

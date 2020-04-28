@@ -1,0 +1,39 @@
+/**index.wxss**/
+
+.u {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100rpx;
+}
+
+.u-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.u-nickname {
+  color: #aaa;
+  width: 420rpx;
+  height: 70rpx;
+  text-align: center;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.lists {
+  margin: 10px auto;
+  font-size: 40rpx;
+  width: 400rpx;
+  height: 40rpx;
+  text-align: center;
+}
+
+.list {
+  margin-right: 10px;
+  font-size: 40rpx;
+}
