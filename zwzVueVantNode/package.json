@@ -20,7 +20,7 @@
     "koa-static": "^3.0.0",
     "koa-views": "^5.2.1",
     "pm2": "^4.2.3",
-    "pug": "^2.0.0-rc.1",
+    "pug": "^3.0.1",
     "start": "^5.1.0"
   },
   "devDependencies": {
